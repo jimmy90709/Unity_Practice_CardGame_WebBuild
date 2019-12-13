@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -10,22 +11,21 @@ public class GameManager : MonoBehaviour
     public Button btnGetCard;
     
     private int player, pc;     // 玩家、電腦卡片編號
-
     private void Start()
     {
         aud = GetComponent<AudioSource>();
+        RePlay_Btn.onClick.AddListener(()=>Replay());   //按鈕.點擊.監聽事件(要新增的事件)
     }
-
+ 
     /// <summary>
     /// 玩家取得卡片
     /// </summary>
     public void PlayerGetCard()
     {
-        btnGetCard.interactable = false;
-        player = GetCard(new Vector3(0, -3, 0));
-
-        Invoke("PcGetCard", 1.5f);
-        Invoke("GameWinner", 2.5f);
+            btnGetCard.interactable = false;
+            player = GetCard(new Vector3(0, -3, 0));
+            Invoke("PcGetCard", 1.5f);
+            Invoke("GameWinner", 2.5f);
     }
 
     /// <summary>
@@ -69,9 +69,36 @@ public class GameManager : MonoBehaviour
     /// 電腦卡片編號：pc
     /// 顯示結算畫面
     /// </summary>
+    /// 
+
+    public GameObject Over_Panel;
+    public Text Over_Text;
+    public Button RePlay_Btn;
+
     private void GameWinner()
     {
-        
+        if (player > pc)
+        {
+            aud.PlayOneShot(soundWin, 1.5f);
+            Over_Text.text = "玩家勝利";
+        }
+        else if (player == pc)
+        {
+            aud.PlayOneShot(soundTie, 1.5f);
+            Over_Text.text = "雙方平手";
+        }
+        else if (player < pc)
+        {
+            aud.PlayOneShot(soundLose, 1.5f);
+            Over_Text.text = "玩家輸了";
+         }
+        Over_Panel.SetActive(true);//將關閉的"結束畫面"物件打開來(開為true 關為false)
     }
+    public void Replay()
+    {
+        //Application.LoadLevel(Application.loadedLevelName);
+        SceneManager.LoadScene("練習場景");
+    }
+
     #endregion
 }

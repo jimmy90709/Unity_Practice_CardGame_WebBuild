@@ -3,7 +3,15 @@ guid: 44e710dbf9f2a2d4e93852646fa13757
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - btnGetCard: {instanceID: 0}
+  - soundGetCard: {instanceID: 0}
+  - soundWin: {fileID: 8300000, guid: c56457de3a8bf4d4d8191bddca0a4d82, type: 3}
+  - soundLose: {fileID: 8300000, guid: e954741e0310d6e439a4e614f15ee793, type: 3}
+  - soundTie: {instanceID: 0}
+  - Over_Panel: {instanceID: 0}
+  - Overt_Text: {instanceID: 0}
+  - RePlay_Btn: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

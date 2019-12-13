@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 648511884}
   - component: {fileID: 648511883}
   - component: {fileID: 648511882}
+  - component: {fileID: 648511886}
   m_Layer: 5
   m_Name: "\u756B\u5E03"
   m_TagString: Untagged
@@ -388,6 +389,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &648511886
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648511881}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &648529579
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +547,9 @@ MonoBehaviour:
   soundWin: {fileID: 8300000, guid: c56457de3a8bf4d4d8191bddca0a4d82, type: 3}
   soundLose: {fileID: 8300000, guid: e954741e0310d6e439a4e614f15ee793, type: 3}
   soundTie: {fileID: 8300000, guid: e1ed5e7bdcf877343b7a96f92fa6a7e0, type: 3}
+  Over_Panel: {fileID: 1575089947}
+  Over_Text: {fileID: 2121032004}
+  RePlay_Btn: {fileID: 1511313311}
 --- !u!82 &975463749
 AudioSource:
   m_ObjectHideFlags: 0
